@@ -11,10 +11,17 @@ const novastarefas = {
 
 tarefas.push(novastarefas)
 console.log(tarefas)
+})
 
-const novatarefa = document.createElement("li")
-novatarefa.textContent = textotarefa
+function renderizarTarefa(){
 
 const listatarefa = document.querySelector("ul")
-listatarefa.appendChild(novatarefa)
-})
+listatarefa.innerHTML = ""
+
+for(const i of tarefas){
+    novalinha = document.createElement("li")
+    novatarefa.textContent = textotarefa
+    listatarefa.appendChild(i)
+}
+}
+
