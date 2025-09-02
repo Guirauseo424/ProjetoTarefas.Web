@@ -1,24 +1,25 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html> <!--Diz ao navegador que é um arquivo HTML-->
+<html lang="pt"> <!--Informa ao navegador que a língua é português-->
+<head> <!--Informações que o navegador vai receber e não são visíveis-->
+    <meta charset="UTF-8"> <!--Define que acentos e caracteres especiais funcionem-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Título na página deavegação-->
     <title>Gerenciador de tarefa</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
-<body>
-    <div class="container">
-        <h1>Minhas tarefas</h1>
+<body> <!--Tudo que é visível -->
+    <div class="container"> <!--Parte bruta principal para estilizar o conteúdo-->
+        <h1>Minhas tarefas</h1> <!--Título-->
         <p>Seja bem vindo ao seu gerenciador de tarefa, adicione tarefas!</p>
-        <form>
-            <input type="text" placeholder="Adicione uma tarefa"> <button>Adicionar</button>
+        <form> <!--Agrupa os campos com entrada de dados-->
+            <input type="text" placeholder="Adicione uma tarefa"> <!--Campo para p usuário digitar, com uma mensagem "Adicione uma tarefa"-->
+            <button>Adicionar</button> <!--Botão-->
         </form>
-        <ul>
+        <ul> <!--Lista não ordenada que salva as tarefas-->
             <li>Estudar HTML</li>
-            <li>Estudar CSS</li>
+            <li>Estudar CSS</li>        <!--Tarefas-->
             <li>Conectar com Python</li>
         </ul>
     </div>
-    <script src="/static/script.js"></script>
+    <script src="/static/script.js"></script> <!--Conexão com JS-->
 </body>
 <html>
