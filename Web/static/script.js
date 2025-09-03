@@ -30,4 +30,3 @@ function buscar_tarefas(){
     fetch("/api/tarefas")
     .then 
 }
-

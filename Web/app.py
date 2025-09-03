@@ -19,3 +19,4 @@ def obter_tarefa(): # Função que retorna pyhton em json para o JS ler
 
 if __name__ == "__main__":
     app.run(debug=True) # Se executar o arquivo liga o servidor
+
