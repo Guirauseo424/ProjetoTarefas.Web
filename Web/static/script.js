@@ -11,12 +11,11 @@ botao.addEventListener("submit", function(event){event.preventDefault() // Funç
         concluida: false,       // Cria um objeto para a tarefa que acabou de receber 
     }
 
-    tarefas.push(novastarefas) // Adiciona o texto do usuário para a lista de objetos 
+    addtarefaback(novastarefas) 
     console.log(tarefas) // Temporário
-    renderizarTarefa() // Chama outra função
 })
 
-function renderizarTarefa(){ // Função para pegar a lista de tarefas e "desenhar" na tela
+function renderizar_tarefa(){ // Função para pegar a lista de tarefas e "desenhar" na tela
     listatarefa.innerHTML = "" // Limpa a lista para não ter duplicados
 
     for(const i of tarefas){    // Criar um laço de repetção para rodar pela lista de tarefas
@@ -27,10 +26,21 @@ function renderizarTarefa(){ // Função para pegar a lista de tarefas e "desenh
 }
 
 function buscar_tarefas(){ 
-    fetch("/api/tarefas") // Busca na URL a partir do delimitado 
-    .then(resposta => resposta.json) // Cria uma variavel para receber um objeto do JSON
+    fetch("/api/tarefas") // Busca na URL a partir do delimitado
+    .then(resposta => resposta.json()) // Cria uma variavel para receber um objeto do JSON
     .then(dados => {
         console.log(dados); // Cria uma váriavel para receber os dados do passo anterior e após isso as escreve nos "bastidores da página"
-        tarefa = dados
+        tarefas = dados // Lista Tarefas recebe informações que a váriavel dados puxou
+        renderizar_tarefa() // Chama a função
     })
+}
+
+function addtarefaback(tarefas){
+    const config = {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(tarefas)
+    }
+    fetch("/api/tarefas", config)
+    .then(buscar_tarefas)
 }
