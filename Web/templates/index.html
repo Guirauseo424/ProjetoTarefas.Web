@@ -4,7 +4,7 @@
     <meta charset="UTF-8"> <!--Define que acentos e caracteres especiais funcionem-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Título na página deavegação-->
     <title>Gerenciador de tarefa</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href={{url_for("static", filename = "style.css")}}>
 </head>
 <body> <!--Tudo que é visível -->
     <div class="container"> <!--Parte bruta principal para estilizar o conteúdo-->
@@ -15,11 +15,8 @@
             <button>Adicionar</button> <!--Botão-->
         </form>
         <ul> <!--Lista não ordenada que salva as tarefas-->
-            <li>Estudar HTML</li>
-            <li>Estudar CSS</li>        <!--Tarefas-->
-            <li>Conectar com Python</li>
         </ul>
     </div>
-    <script src="../static/script.js"></script> <!--Conexão com JS-->
+    <script src={{url_for("static", filename = "script.js")}}></script> <!--Conexão com JS-->
 </body>
 <html>

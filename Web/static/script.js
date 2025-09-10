@@ -1,4 +1,3 @@
-
 let tarefas = [] // Lista que guarda todas as tarefas como objetos 
 const botao = document.querySelector("form")
 const tarefa = document.querySelector("input") // Cria uma variável para receber os valores em HTML
@@ -8,7 +7,8 @@ botao.addEventListener("submit", function(event){event.preventDefault() // Funç
     const textotarefa = tarefa.value // Pega o texto que o usuário digitou no momento do envio
     const novastarefas = {
         texto : textotarefa,
-        concluida: false,       // Cria um objeto para a tarefa que acabou de receber 
+        concluida: false, // Cria um objeto para a tarefa que acabou de receber
+        id: true,       
     }
 
     addtarefaback(novastarefas) 
@@ -44,3 +44,4 @@ function addtarefaback(tarefas){
     fetch("/api/tarefas", config)
     .then(buscar_tarefas)
 }
+buscar_tarefas();
