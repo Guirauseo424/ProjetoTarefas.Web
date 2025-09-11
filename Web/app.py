@@ -30,21 +30,24 @@ def obter_tarefa(): # Função que retorna pyhton em json para o JS ler
     global proximo_id
     if request.method == "POST":
         novo_dado = request.get_json()
-        proximo_id.append(novo_dado)
-        nova_tarefa = novo_dado
+        tarefas_completa = {
+            "id": proximo_id,
+            "texto": novo_dado["texto"],
+            "concluida": False
+        }
         proximo_id += 1
-        lista_tarefa.append(nova_tarefa)
+        lista_tarefa.append(tarefas_completa)
         salvar_tarefa(lista_tarefa)
-        return jsonify(nova_tarefa)
+        return jsonify(tarefas_completa)
     else:
         return jsonify(lista_tarefa)
     
 @app.route("/api/tarefas/<int:id>", methods = ["PUT"])
-def att_tarefa(proximo_id):
-    for i in range(lista_tarefa):
-        if id == id:
-            lista_tarefa[i]["concluida"] = True
-            salvar_tarefa()
+def att_tarefa(id):
+    for tarefa in (lista_tarefa):
+        if tarefa["id"] == id:
+            tarefa["concluida"] = True
+            salvar_tarefa(lista_tarefa)
             return jsonify(lista_tarefa)
 
 

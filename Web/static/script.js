@@ -3,6 +3,11 @@ const botao = document.querySelector("form")
 const tarefa = document.querySelector("input") // Cria uma variável para receber os valores em HTML
 const listatarefa = document.querySelector("ul") 
 
+listatarefa.addEventListener("click", function(event) {
+    const tarefa_clicada = event.target 
+})
+
+
 botao.addEventListener("submit", function(event){event.preventDefault() // Função para clicar no botão
     const textotarefa = tarefa.value // Pega o texto que o usuário digitou no momento do envio
     const novastarefas = {
@@ -19,7 +24,8 @@ function renderizar_tarefa(){ // Função para pegar a lista de tarefas e "desen
     listatarefa.innerHTML = "" // Limpa a lista para não ter duplicados
 
     for(const i of tarefas){    // Criar um laço de repetção para rodar pela lista de tarefas
-        let novalinha = document.createElement("li") // Cria um elemento vazio "li" vazio na memória 
+        let novalinha = document.createElement("li") // Cria um elemento vazio "li" vazio na memória
+        novalinha.dataset.id = i.id 
         novalinha.textContent = i.texto // O novo elemento criado recebe o valor da vez da lista de tarefas
         listatarefa.appendChild(novalinha) // Adiciona o novo elemento que agora tem valor dentro da "ul" do HTML
     }
