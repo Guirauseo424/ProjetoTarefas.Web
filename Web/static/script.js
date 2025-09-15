@@ -33,6 +33,11 @@ function renderizar_tarefa(){ // Função para pegar a lista de tarefas e "desen
 
     for(const i of tarefas){    // Criar um laço de repetção para rodar pela lista de tarefas
         let novalinha = document.createElement("li") // Cria um elemento vazio "li" vazio na memória
+        
+        if (i.concluida == true){
+            novalinha.classList.add("Tarefa concluida")
+        }
+        
         novalinha.dataset.id = i.id 
          
         const texto_tarefa = document.createElement("span")
