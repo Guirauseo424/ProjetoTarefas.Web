@@ -4,7 +4,11 @@ const tarefa = document.querySelector("input") // Cria uma variável para recebe
 const listatarefa = document.querySelector("ul") 
 
 listatarefa.addEventListener("click", function(event) {
-    const tarefa_clicada = event.target 
+    if (event.target.tagName == "BUTTON"){
+    const li = event.target.closest("li")
+    const id_tarefa = li.dataset.id
+    marcar_concluida(id_tarefa)
+    } 
 })
 
 
@@ -12,13 +16,17 @@ botao.addEventListener("submit", function(event){event.preventDefault() // Funç
     const textotarefa = tarefa.value // Pega o texto que o usuário digitou no momento do envio
     const novastarefas = {
         texto : textotarefa,
-        concluida: false, // Cria um objeto para a tarefa que acabou de receber
-        id: true,       
+        concluida: false, // Cria um objeto para a tarefa que acabou de receber       
     }
 
     addtarefaback(novastarefas) 
     console.log(tarefas) // Temporário
 })
+
+function marcar_concluida(id_tarefa){
+    fetch(`/api/tarefas/${id_tarefa}`, {method: "PUT"})
+    .then(buscar_tarefas)
+}
 
 function renderizar_tarefa(){ // Função para pegar a lista de tarefas e "desenhar" na tela
     listatarefa.innerHTML = "" // Limpa a lista para não ter duplicados
@@ -26,7 +34,15 @@ function renderizar_tarefa(){ // Função para pegar a lista de tarefas e "desen
     for(const i of tarefas){    // Criar um laço de repetção para rodar pela lista de tarefas
         let novalinha = document.createElement("li") // Cria um elemento vazio "li" vazio na memória
         novalinha.dataset.id = i.id 
-        novalinha.textContent = i.texto // O novo elemento criado recebe o valor da vez da lista de tarefas
+         
+        const texto_tarefa = document.createElement("span")
+        texto_tarefa.textContent = i.texto // O novo elemento criado recebe o valor da vez da lista de tarefas
+        
+        const botao_concluido = document.createElement("button")
+        botao_concluido.textContent = "Concluído"
+        
+        novalinha.appendChild(texto_tarefa)
+        novalinha.appendChild(botao_concluido)
         listatarefa.appendChild(novalinha) // Adiciona o novo elemento que agora tem valor dentro da "ul" do HTML
     }
 }
