@@ -2,16 +2,56 @@
     {
         "concluida": true,
         "id": 1,
-        "texto": "Ola"
+        "texto": "sexo 3 horas "
     },
     {
-        "concluida": false,
+        "concluida": true,
         "id": 2,
-        "texto": "Testando "
+        "texto": "mentir na facul todos os dias "
+    },
+    {
+        "concluida": true,
+        "id": 3,
+        "texto": "ter a maior bunda da facul"
+    },
+    {
+        "concluida": true,
+        "id": 4,
+        "texto": "ter a maior bunda da faculter uma irm\u00e3 gorila"
+    },
+    {
+        "concluida": true,
+        "id": 5,
+        "texto": "ter a maior bunda da faculter uma irm\u00e3 gorilacolocar 7 carros em uma garagem na favela (vai tomando))"
+    },
+    {
+        "concluida": true,
+        "id": 6,
+        "texto": "trair a namorada "
+    },
+    {
+        "concluida": true,
+        "id": 7,
+        "texto": "se gabar que pegou mulher do insta "
+    },
+    {
+        "concluida": true,
+        "id": 8,
+        "texto": "pagar 50  reais em um salgado "
+    },
+    {
+        "concluida": true,
+        "id": 9,
+        "texto": "pagar 50  reais em um salgado "
     },
     {
         "concluida": false,
-        "id": 3,
-        "texto": "Falta pouco"
+        "id": 10,
+        "texto": "tomar o soco de um gorila e sair ileso "
+    },
+    {
+        "concluida": false,
+        "id": 11,
+        "texto": "kgekr"
     }
 ]
